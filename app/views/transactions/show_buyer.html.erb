@@ -1,0 +1,7 @@
+<%= @transaction_order.each do |transaction| %>
+  <tr>
+    <td><%= transaction.product.name %></td>
+    <td><%= transaction.quantity %></td>
+    <td><%= transaction.created_at.strftime("%d/%m/%Y %H:%M:%S") %></td>
+  </tr>
+<% end %>

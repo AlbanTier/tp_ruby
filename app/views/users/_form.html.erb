@@ -1,25 +1,23 @@
 <%= form_with(model: user) do |form| %>
 
   <div>
-    <%= form.label :email, style: "display: block" %>
+    <%= form.label :email, 'E-mail :', style: "display: block" %>
     <%= form.text_field :email %>
   </div>
   <div>
-    <%= form.label :password, style: "display: block" %>
+    <%= form.label :password, 'Mot de passe :', style: "display: block" %>
     <%= form.password_field :password %>
   </div>
   <div>
-    <%= form.label :password_confirmation, style: "display: block" %>
+    <%= form.label :password_confirmation, 'Confirmation :', style: "display: block" %>
     <%= form.password_field :password_confirmation %>
   </div>
   <div class="field">
     <%= form.label :is_seller, class: "checkbox" do %>
-      <%= form.check_box :is_seller %> Je veux être un vendeur
+      <%= form.check_box :is_seller %>Je veux être un vendeur
     <% end %>
   </div>
-
-
   <div>
-    <%= form.submit %>
+    <%= form.submit "Valider" %>
   </div>
 <% end %>

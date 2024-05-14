@@ -3,5 +3,15 @@
 <p><strong>Description:</strong> <%= @product.description %></p>
 <p><strong>Price:</strong> <%= @product.price %></p>
 <p><strong>Stock:</strong> <%= @product.stock %></p>
-
+<% if @product.stock >= 0 %>
+  <%= form_with(model: @transaction, url: product_transactions_path(@product), method: :post) do |form| %>
+    <div class="field">
+      <%= form.label :quantity %>
+      <%= form.number_field :quantity, min: 1, max: @product.stock %>
+    </div>
+    <%= form.submit "Buy", class: "btn btn-primary" %>
+  <% end %>
+<% else %>
+  <p>Produit hors stock.</p>
+<% end %>
 <%= link_to "Back", products_path %>

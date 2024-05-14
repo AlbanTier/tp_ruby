@@ -1,12 +1,22 @@
 Rails.application.routes.draw do
+  get 'transactions/create'
+  get 'transactions' => 'transactions#index'
+  get 'transactions/:user_id' => 'transactions#show_buyer'
+
   get 'products/index' => 'products#index'
   get 'products/:id' => 'products#show'
   get 'product/new' => 'products#new'
   post 'products/create' => 'products#create'
   delete 'products/destroy' => 'products#destroy'
-  root 'application#index'
+  resources :products do
+    resources :transactions, only: [:create]
+  end
+
+  root 'products#index'
+
   resources :users, except: [:new]
   resources :products, except: [:new]
+
   get '/register' => 'users#new'
   post '/register' => 'users#create'
 

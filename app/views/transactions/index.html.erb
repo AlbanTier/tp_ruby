@@ -1,0 +1,11 @@
+<h1>Liste des transactions</h1>
+
+<ul>
+  <% @transactions.each do |transaction| %>
+    <article>
+      <header><%= transaction.id %></header>
+      <body><%= transaction.created_at %></body>
+    </article>
+  <% end %>
+</ul>
+
