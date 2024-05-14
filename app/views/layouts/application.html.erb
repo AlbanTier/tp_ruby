@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <title>Marketplace</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.orange.min.css"
+    />
+  <title>Hello world!</title>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
+</head>
+<body>
+<main class="container">
+  <%= render 'layouts/navbar' %>
+  <%= yield %>
+</main>
+</body>
+</html>
