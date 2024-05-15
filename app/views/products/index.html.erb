@@ -1,14 +1,14 @@
 <h1>Liste des produits</h1>
 
-<ul>
-  <% @products.each do |product| %>
-    <article>
-      <header><%= product.name %></header>
-      <body><%= product.description %></body>
-      <body><%= product.price %></body>
-      <footer><%= link_to "Voir le produit", product %></footer>
-    </article>
-  <% end %>
-</ul>
+  <div class="flex-container">
+      <% @products.each do |product| %>
+        <div class="flex-items product-card">
+              <h1 class="product-name"><%= product.name %></h1>
+              <p class="description"><%= product.description %></p>
+              <p class="article-price"><%= product.price %> €</p>
+              <p class="link"><%= link_to "Voir le produit", product %></p>
+        </div>
+      <% end %>
+  </div>
 
 <%= link_to "Ajouter un nouveau produit", product_new_path %>

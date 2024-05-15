@@ -14,3 +14,48 @@
  *= require_self
  */
 @use "pico";
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
+    justify-content: flex-start;
+    align-items: normal;
+    align-content: normal;
+    box-shadow: unset;
+}
+
+.flex-items {
+    width: 49%;
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+    margin: 4px;
+    border-radius: 10px;
+}
+.product-card {
+    border: 1px black;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+}
+.product-card footer {
+    text-align: center;
+}
+.product-name {
+    font-size: 1.2em;
+    color: #333;
+    border-bottom: solid #F2F2F2;
+}
+.description {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #666;
+}
+
+

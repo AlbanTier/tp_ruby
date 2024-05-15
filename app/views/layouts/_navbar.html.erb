@@ -10,7 +10,7 @@
       <li><a><%= link_to "Se connecter", login_path %></a></li>
     <% else %>
       <li><a><%= link_to "Vendre un produit", product_new_path %></a></li>
-      <li><a><%= link_to "Mes commandes", transactions_path %></a></li>
+      <li><a><%= link_to "Voir les transactions", transactions_path %></a></li>
       <li><a><%= link_to "Se déconnecter", logout_path, data: { turbo_method: :delete } %></a></li>
     <% end %>
   </ul>
